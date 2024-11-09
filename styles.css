@@ -1,0 +1,202 @@
+@font-face{
+    font-family: 'Gotham';
+    src: url('./fonts/Gotham-Bold.otf');
+    font-weight: 700;
+}
+
+@font-face{
+    font-family: 'Gotham';
+    src: url('./fonts/GothamMedium.ttf');
+    font-weight: 400;
+}
+
+:root{
+    --font-color: #3A3A3A;
+    --background-color: #FFFFFF;    
+    --card-background: #FFFFFF;
+    --main-section-bacground: linear-gradient(#FFFAF2 0%, #FFF6E9 100%);
+    --footer-bacground: #303030;
+    --logo-backgorund: #3A3A3A;
+    --theme-background: #3A3A3A;
+    --font-color-base-200: #3A3A3AD6;
+    --orange: #FFAA45;
+    --white: #FFFFFF;
+    --hero-bg: url('/assets/hero/lightHero.svg');
+    --theme-icon: url('/assets/theme/dark.svg');
+
+    
+    --font-size-xl: 47px;
+    --font-size-lg: 36px;
+    --font-size-md: 16px;
+    --font-size-sm: 14px;
+
+    --circle-border-color: #FFFFFF66;
+}
+
+.is-dark{
+    --font-color: #FFFFFF;
+    --background-color: #000000;
+    --card-background: #191919;
+    --main-section-bacground: #FFFFFF0D;
+    --footer-bacground: #191919;
+    --logo-backgorund: #FFFFFF;
+    --theme-background: #424040;
+    --font-color-base-200: #FFFFFF;
+    --orange: #FF983A;
+    --theme-icon: url('/assets/theme/light.svg');
+}
+
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gotham';
+    transition: all 0.2s;
+}
+body{
+    background-color: var(--background-color);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 34px 120px;
+}
+
+header .nav{
+    display: flex;
+    align-items: center;
+    gap: 69px;
+}
+header .nav .navLink{
+    all: unset;
+    cursor: pointer;
+    color: var(--font-color);
+    font-size: var(--font-size-sm);
+}
+
+header .nav .theme-switcher{
+    width: 31px;
+    height: 21px;
+    border: 2px solid var(--theme-background);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.theme-toggle{
+    justify-content: flex-end;
+}
+header .nav .theme-switcher .theme-wrapper{
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 21px;
+    width: 20px;
+    background-color: var(--theme-background);
+    background-image: var(--theme-icon);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 12px 12px;
+}
+
+main .hero-section {
+    padding: 50px 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* gap: 150px; */
+}
+
+main .hero-section .hero-left{
+    width: 38%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+main .hero-section .hero-left .title{
+    font-size: var(--font-size-lg);
+    color: var(--font-color);
+    line-height: 54px;
+}
+
+main .hero-section .hero-left .subTitle{
+    color: var(--font-color-base-200);
+    font-size: var(--font-size-sm);
+    line-height: 21px;
+}
+main .hero-section .hero-left button{
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--orange);
+    border: none;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    align-self: flex-start;
+    cursor: pointer;
+}
+
+main .hero-section .hero-right{
+    background-image: var(--hero-bg);
+    background-repeat: no-repeat;
+    height: 424px;
+    width: 550px;
+}
+
+main .main-section{
+    padding: 72px 120px;
+    background: var(--main-section-bacground);
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(380px, 384px));
+    gap: 24px;
+    justify-content: space-between;
+}
+
+main .main-section .card{
+    background-color: var(--card-background);
+    width: 384px;
+    border-radius: 16px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+    gap: 11px;
+}
+
+main .main-section .card .card-title{
+    color: var(--font-color);
+    font-size: var(--font-size-md);
+}
+main .main-section .card .card-desc{
+    color: var(--font-color);
+    font-size: var(--font-size-sm);
+    font-weight: 400;
+    line-height: 18px;
+}
+
+footer{
+    background-color: var(--footer-bacground);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 34px 120px;
+}
+
+footer .social{
+    display: flex;
+    gap: 16px;
+    cursor: pointer;
+}
+footer .social .circle{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 1px solid var(--circle-border-color);
+}
