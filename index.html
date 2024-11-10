@@ -46,7 +46,9 @@
             <div class="hero-right"></div>
 
         </section>
+        
         <section class="main-section">
+            <div class="main-wrapper">
             <div class="card">
                 <img src="/assets/api/rocket.svg" alt="rocket">
                 <h3 class="card-title">Invoicing API</h3>
@@ -93,24 +95,100 @@
                 <h3 class="card-title">Catalogue API</h3>
                 <h5 class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut urna purus.</h5>
             </div>
-            
+        </div>
+        </section>
+        <section class="api-section">
+            <div class="api-left">
+                <h2 class="api-title">Ask ChatGPT Questions</h2>
+                <h3 class="api-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu aliquam quam, in congue leo.</h3>
+                <div class="api-card">
+                    <div class="main-card">
+                        <input type="text" placeholder="Search or ask ChatGPT...">
+                        <h2 class="search-title">API References</h2>
+                        <h3 class="search-desc">
+                            Integer eu euismod dolor. Sed ultrices scelerisque finibus. Duis et rutrum mauris. Nulla vehicula, urna in malesuada luctus, metus ligula varius eros, nec posuere neque neque a metus.
+                        </h3>
+                    </div>
+                    <div class="back-card"></div>
+                    <div class="api-logo"></div>
+                </div>
+            </div>
+            <div class="api-right">
+                <h2 class="api-title">API Explorer</h2>
+                <h3 class="api-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu aliquam quam, in congue leo.</h3>
+                <div class="api-card">
+                    <div class="main-card">
+                        <div class="api-form">
+                            <div class="wrapper">
+                                <div class="selects">
+                                    <div class="select">
+                                        <h2>API</h2>
+                                        <img src="/assets/api/dropdown.svg" alt="dropdown">
+                                    </div>
+                                    <div class="select">
+                                        <h2>Endpoint</h2>
+                                        <img src="/assets/api/dropdown.svg" alt="dropdown">
+                                    </div>
+                                </div>
+                                <h2>API Explorer</h2>
+                                <div class="inputs">
+                                    <section>
+                                        <label for="source_id">source_id</label>
+                                        <input type="password" id="source_id" placeholder="******">
+                                    </section>
+                                    <section>
+                                        <label for="idempotency_key:">idempotency_key:</label>
+                                        <input type="password" id="idempotency_key:" placeholder="******">
+                                    </section>
+                                    <section>
+                                        <label for="location_ID:">location_ID:</label>
+                                        <input type="password" id="location_ID:" placeholder="******">
+                                    </section>
+                                </div>
+                            </div>
+                                <div class="submit">
+                                <img src="/assets/api/run.svg" alt="run">
+                                <h2>Run</h2>
+                            </div>
+                        </div>
+                        <div class="api-responses">
+                            <div class="req-block">
+                                <h2>Request</h2>
+                                <h3 contenteditable="true">try {
+                                    const respons = await client.paymentsApi.createPayment ({
+                                    sourceId: ’ccof;GaJGNaZa840gDJm4GB’,
+                                    idempotencyKey: ’7b0f3ec5-086a-8f13-3c81b3875218’,
+                                    amountMoney
+                                </h3>
+                            </div>
+                            <div class="res-block">
+                                <h2>200 Response</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="back-card"></div>
+                    <div class="api-logo"></div>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <img src="/assets/logos/footerLogo.svg" alt="logo">
-        <div class="social">
-            <div class="circle">
-                <img src="/assets/socialMedia/linkedIn.svg" alt="linkedin">
-            </div>
-            <div class="circle">
-                <img src="/assets/socialMedia/github.svg" alt="github">
-            </div>
-            <div class="circle">
-                <img src="/assets/socialMedia/discord.svg" alt="discord">
-            </div>
-            <div class="circle">
-                <img src="/assets/socialMedia/tiktok.svg" alt="tiktok">
+        <div class="footer">
+            <img src="/assets/logos/footerLogo.svg" alt="logo">
+            <div class="social">
+                <div class="circle">
+                    <img src="/assets/socialMedia/linkedIn.svg" alt="linkedin">
+                </div>
+                <div class="circle">
+                    <img src="/assets/socialMedia/github.svg" alt="github">
+                </div>
+                <div class="circle">
+                    <img src="/assets/socialMedia/discord.svg" alt="discord">
+                </div>
+                <div class="circle">
+                    <img src="/assets/socialMedia/tiktok.svg" alt="tiktok">
+                </div>
             </div>
         </div>
     </footer>

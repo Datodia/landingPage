@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 @font-face{
     font-family: 'Gotham';
     src: url('./fonts/Gotham-Bold.otf');
@@ -18,17 +20,32 @@
     --footer-bacground: #303030;
     --logo-backgorund: #3A3A3A;
     --theme-background: #3A3A3A;
+    --base-100: #141719;
     --font-color-base-200: #3A3A3AD6;
+    --base-300: #14171914;
+    --base-400: #141719D6;
+    --base-500: #353535;
+    --base-600: #00000029;
     --orange: #FFAA45;
     --white: #FFFFFF;
+    --black: #000000;
+    --green: #51D1AA;
     --hero-bg: url('/assets/hero/lightHero.svg');
     --theme-icon: url('/assets/theme/dark.svg');
-
+    --api-left-back-card-background: linear-gradient(286deg, #ffc577, rgba(255, 255, 255, 0));
+    --api-right-back-card-background: linear-gradient(100deg, #ffc577, rgba(255, 255, 255, 0));
+    --api-left-main-card-background: #FFFFFF;
+    --api-chatGpt-logo: url('/assets/api/gptLight.svg');
+    --api-apiDock-logo: url('/assets/api/apiDocLight.svg');
+    --search-icon: url('/assets/api/searchLight.svg');
+    --api-left-main-card-border: linear-gradient(284.04deg, #FD954A, #F5E2CD);
     
     --font-size-xl: 47px;
     --font-size-lg: 36px;
+    --font-size-base: 20px;
     --font-size-md: 16px;
     --font-size-sm: 14px;
+    --font-size-xs: 12px;
 
     --circle-border-color: #FFFFFF66;
 }
@@ -44,7 +61,19 @@
     --font-color-base-200: #FFFFFF;
     --orange: #FF983A;
     --theme-icon: url('/assets/theme/light.svg');
+    --api-left-back-card-background: #151515;
+    --api-right-back-card-background: linear-gradient(284.04deg, #FF983A, #D09E9E);    ;
+    --api-left-main-card-background: #151515;
+    --api-chatGpt-logo: url('/assets/api/gptDark.svg');
+    --api-apiDock-logo: url('/assets/api/apiDocDark.svg');
+    --base-100: #FFFFFF;
+    --base-300: #FFFFFF14;
+    --base-400: #FFFFFFD6;
+    --search-icon: url('/assets/api/searchDark.svg');
+    --api-left-main-card-border: linear-gradient(284.04deg, #FA9946, #C5F5FF);
+    --base-500: #151515;
 }
+
 
 *, *::after, *::before{
     margin: 0;
@@ -61,7 +90,9 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 34px 120px;
+    padding: 34px 20px;
+    max-width: 1240px;
+    margin: 0 auto;
 }
 
 header .nav{
@@ -104,11 +135,12 @@ header .nav .theme-switcher .theme-wrapper{
 }
 
 main .hero-section {
-    padding: 50px 120px;
+    padding: 50px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* gap: 150px; */
+    max-width: 1240px;
+    margin: 0 auto;
 }
 
 main .hero-section .hero-left{
@@ -148,10 +180,14 @@ main .hero-section .hero-right{
 }
 
 main .main-section{
-    padding: 72px 120px;
+    padding: 72px 20px;
     background: var(--main-section-bacground);
+}
+main .main-section .main-wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(380px, 384px));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 384px));
     gap: 24px;
     justify-content: space-between;
 }
@@ -178,12 +214,285 @@ main .main-section .card .card-desc{
     line-height: 18px;
 }
 
+.api-section{
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 20px 60px 20px;
+    max-width: 1240px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.api-section .api-left, .api-section .api-right{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    max-width: 507px;
+}
+.api-section .api-card{
+    position: relative;
+    margin-top: 30px;
+}
+
+.api-section .api-left .api-card .main-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 400px;
+    height: 400px;
+    padding: 40px 42px; 
+    background: var(--api-left-main-card-background);
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.api-section .api-left .api-card .main-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 24px;
+    padding: 3px;
+    background: var(--api-left-main-card-border);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+
+.api-section .api-left .api-card .main-card input{
+    width: 100%;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--base-300);
+    outline: none;
+    padding: 0 10px 0 50px;
+    background-image: var(--search-icon);
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-color: var(--card-background);
+}
+.api-section .api-left .api-card .main-card .search-title{
+    margin-top: 20px;
+    font-family: Inter;
+    font-weight: 600;
+    color: var(--base-100);
+    font-size: var(--font-size-base);
+}
+.api-section .api-left .api-card .main-card .search-desc{
+    font-family: Inter;
+    font-weight: 400;
+    color: var(--base-400);
+    line-height: 28px;
+    font-size: var(--font-size-xs);
+}
+
+.api-section .api-left .api-card .back-card{
+    width: 380px;
+    height: 380px;
+    border-radius: 24px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background: var(--api-left-back-card-background)
+
+}
+
+.api-section .api-left .api-card .api-logo{
+    position: absolute;
+    width: 117px;
+    height: 120px;
+    background-image: var(--api-chatGpt-logo);
+    left: 85%;
+    bottom: 80%;
+    background-position: center;
+}
+
+.api-section .api-right .api-card .main-card {
+    display: flex;
+    gap: 15px;
+    width: 500px;
+    height: 330px;
+    padding: 22px; 
+    background: var(--base-500);
+    border-radius: 24px;
+}
+
+.api-section .api-right .api-card .main-card .api-form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.api-section .api-right .api-card .main-card .api-form .wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.api-section .api-right .api-card .main-card .selects{
+    display: flex;
+    gap: 8px;
+}
+.api-section .api-right .api-card .main-card .select{
+    padding: 7px 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: var(--base-600);
+    cursor: pointer;
+}
+
+.api-section .api-right .api-card .main-card .select h2{
+    font-family: Helvetica;
+    font-size: 8px;
+    color: var(--white);
+}
+
+.api-section .api-right .api-card .main-card  h2{
+    font-family: Helvetica;
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--white);
+}
+.api-section .api-right .api-card .main-card .api-form .inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.api-section .api-right .api-card .main-card .api-form label{
+    color: var(--white);
+    font-size: 8px;
+    font-family: Helvetica;
+}
+.api-section .api-right .api-card .main-card .api-form section{
+    display: flex;
+    justify-content: space-between;
+}
+.api-section .api-right .api-card .main-card .api-form input{
+    border: 1px solid var(--white);
+    width: 95px;
+    background: none;
+    border-radius: 5px;
+    color: var(--white);
+}
+.api-section .api-right .api-card .main-card .api-form input::placeholder{
+    color: var(--white);
+}
+
+.api-section .api-right .api-card .main-card .api-form .submit{
+    padding: 5px 10px;
+    background-color: var(--base-600);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    align-self: flex-start;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.api-section .api-right .api-card .main-card .api-form .submit h2{
+    font-family: Helvetica;
+    font-size: 8px;
+    color: var(--white);
+}
+
+
+.api-section .api-right .api-card .main-card .api-responses{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.api-section .api-right .api-card .main-card .api-responses .req-block, 
+.api-section .api-right .api-card .main-card .api-responses .res-block{
+    background-color: var(--black);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+}
+
+.api-section .api-right .api-card .main-card .api-responses .req-block h2,
+.api-section .api-right .api-card .main-card .api-responses .res-block h2{
+    font-family: 'Roboto mono';
+    font-weight: 400;
+    font-size: 9px;
+    color: var(--white);
+}
+.api-section .api-right .api-card .main-card .api-responses .res-block h2{
+    color: var(--green);
+}
+.api-section .api-right .api-card .main-card .api-responses .req-block h3{
+    font-family: 'Roboto mono';
+    font-weight: 400;
+    font-size: 7px;
+    color: var(--white);
+}
+
+.api-section .api-right .api-card .back-card{
+    width: 365px;
+    height: 400px;
+    border-radius: 24px;
+    position: absolute;
+    top: 0;
+    transform: translate(20%, -8%);
+    z-index: -1;
+    background: var(--api-right-back-card-background)
+
+}
+
+
+.api-section .api-right .api-card .api-logo{
+    position: absolute;
+    width: 91px;
+    height: 100px;
+    background-image: var(--api-apiDock-logo);
+    left: 85%;
+    top: 80%;
+    background-position: center;
+}
+
+.api-title{
+    color: var(--font-color);
+    font-size: var(--font-size-lg);
+    text-align: center;
+}
+
+.api-desc{
+    color: var(--font-color-base-200);
+    font-size: var(--font-size-sm);
+    text-align: center;
+}
+
+
 footer{
     background-color: var(--footer-bacground);
+    padding: 34px 20px;
+}
+
+footer .footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 34px 120px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 footer .social{
